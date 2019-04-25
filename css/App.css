@@ -1,0 +1,126 @@
+/*
+Color Scheme
+tint:   #7B93DB
+base:   #3054BF
+shade:  #21387B
+
+ */
+
+* {
+  margin: 0;
+  /*border: #000000 1px dashed;*/
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #21387B;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-left: 20px;
+}
+
+.top-panel {
+  grid-area: top;
+  visibility: hidden;
+}
+
+#modeDiv, #staffDiv {
+  visibility: hidden;
+}
+
+.corner {grid-area: corner;}
+
+.main {
+  grid-area: main;
+  border: black 2px solid;
+  padding: 5px;
+  background-color: #7B93DB;
+}
+.right-panel {
+  grid-area: right;
+  padding: 0;
+}
+
+.App-body {
+  display: grid;
+  grid-template-areas:
+          'top top top top top top top corner'
+          'main main main main main main main right';
+  grid-gap: 10px;
+  padding: 10px;
+  margin-left: 50px;
+}
+
+.buttons {
+  width: 100%;
+  display: block;
+}
+
+#modeLabel, #staffDiv {
+  margin-top: 50px;
+}
+
+img {
+  height: 25px;
+  margin-left: -26px;
+  margin-bottom: -5px;
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: left;
+  border: black 1px solid;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: left;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 240px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left;
+}
+
+.dropdown-content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-content li {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown-content li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+}
