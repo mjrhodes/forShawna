@@ -64,27 +64,52 @@ class App extends React.Component {
 
   render() {
 	let e = React.createElement;
-    let employees = Scheduler.employees.map((employee, i) =>
-        e("li", {key:"employee_"+i, index:i, onClick:this.handleDropMenuClick},employee.name);
-
-    return (
-      e("div", {className:"App"}, 
-		e("header", {className:"App-header"},
-			e("h1", null, "Scheduler");
+    
+    return e('div', {className:'App'},
+		e('header', {className:'App-header'},
+			e('h1',null,'Scheduler')
 		),
-		e("div", {className:"App-body"},
-			e("div", {id:"topPanel", className:"top-panel"}, 
-				e("div", {className:"dropdown"}, 
-					e("h2", null, "Schedule for:"),
-					e("button", {id:"dropdown", className:"dropbtn"}),
-					e("img", {src:"./dropDownArrow.png", alt:""}),
-					e("div", {className:"dropdown-content"},
-						e("ul", {id:"dropmenu"}
+	
+		e('div', {className:'App-body'},
+			e('div', {className:'top-panel', id:'topPanel'},
+				e('div', {className:'dropdown'},
+					e('h2', null, 'Schedule for:'),
+					e('button', {id:'dropdown', className:'dropbtn'}),
+					e('div', {className:'dropdown-content'},
+						e('ul', {id:'dropmenu'},
+							e('li', null, 'Employee Name')
+						)
+					)
+				)
+				//<Button />
+			),
+			e('div', {className:'main'}, 
+				e('h1', null, 'main') //<Schedule />
+			),
+		
+			e('div', {className:'right-panel'},
+				e('div', {className:'buttons'},
+					e('h2', null, 'Schedule:'),
+					//<Button /> work schedule
+					e('br', null),
+					//<Button /> employee schedule
+					e('div', {id:'modeDiv'},
+						e('h2', {id:'modeLabel'}, 'Mode:'),
+						//<Button /> set unavailable
+						e('br', null),
+						//<Button /> set scheduled
+						e('br', null)
+						//<Button /> set disabled
+					),
+					e('div', {id:'staffDiv'},
+						e('h2', {id:'StaffLabel'}, 'Staff:'),
+						//<Button /> add Employee
+						e('br', null)
+						//<Button /> remove Employee
 					)
 				)
 			)
 		)
-	  )
-    );
+	);
   }
 }
